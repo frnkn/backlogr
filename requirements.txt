@@ -1,0 +1,9 @@
+Django==1.9.4
+django-braces==1.8.1
+django-crispy-forms==1.6.0
+django-filter==0.13.0
+djangorestframework==3.3.3
+Markdown==2.6.6
+psycopg2==2.6.1
+selenium==2.53.1
+six==1.10.0
