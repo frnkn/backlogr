@@ -11,6 +11,8 @@ services:
 install:
   - pip install -r requirements.txt
 # command to run tests
+before_script:
+ - psql -c 'create database backlogr;' -U postgres
 script:
   - python manage.py check --settings=backlogr.settings.local
   - python manage.py migrate --noinput --settings=backlogr.settings.local
