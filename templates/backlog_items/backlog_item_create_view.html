@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>FRNKN - Backlog</title>
+{% endblock title %}
+
+{% block js_libraries %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<!--Markdown JS-->
+<script src="{% static "js/markdown.js" %}"></script>
+{% endblock js_libraries %}
+
+{% block content %}
+
+<div class="container-fluid ta-backlog-projects">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="display-1">Backlog Create View</h1>
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-6 sidebar">
+      <h2>That's a preview of your backlog item:</h2>
+      <div class="card card__preview">
+        <div class="card-header">
+         <small class="muted">Backlog Item: <span id="span-type">User Story</span></small>
+        </div>
+        <div class="card-block">
+          <p class="card-text lead">As a <span id="span-who">WHO</span> I <span id="span-what">WHAT</span>, so that <span id="span-why">WHY</span></p>
+        </div>
+        <div class="card-block">
+          <p class="card-text">Acceptance Criteria:</p>
+          <div id="criteria"></div>
+          <p class="card-text lead">Story Points: <span id="span-story-points"></span></p>
+          <p class="card-text lead">Business Value: <span id="span-business-value"></span></p>
+          <hr>
+          <p class="card-text">Notes:</p>
+          <div id="notes"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-8 col-lg-6">
+      <h2>Use this form to write your backlog item:</h2>
+      <div class="card card-block">
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <input type="submit" value="Submit" class="btn btn-success">
+      </form>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+</div>
+
+
+
+{% block custom_js %}
+
+<script>
+  $( document ).ready( function() {
+
+    console.log("loaded");
+
+    //get form field input#who
+    $('#id_backlog_item_type').on('change',function (){
+      console.log(this.value);
+      $('span#span-type').text(this.value);
+       /// do your thing here.
+       //  use $(this).val() instead e.target.value
+    });
+
+    //get form field input#who
+    $('input#id_who').on('change keydown keyup',function (){
+      console.log("PRESSED", $(this).val());
+      $('span#span-who').text($(this).val());
+       /// do your thing here.
+       //  use $(this).val() instead e.target.value
+    });
+
+    //get form field input#what
+    $('input#id_what').on('change keydown keyup',function (){
+      console.log("PRESSED", $(this).val());
+      $('span#span-what').text($(this).val());
+       /// do your thing here.
+       //  use $(this).val() instead e.target.value
+    });
+
+    //get form field input#why
+    $('input#id_why').on('change keydown keyup',function (){
+      console.log("PRESSED", $(this).val());
+      $('span#span-why').text($(this).val());
+       /// do your thing here.
+       //  use $(this).val() instead e.target.value
+    });
+
+    //get form field input#why
+    $('textarea#id_acceptance_criteria').on('change keydown keyup',function (){
+      console.log("PRESSED", $(this).val());
+      //$('#criteria').text($(this).val());
+      console.log(markdown.toHTML($(this).val()));
+      var md = markdown.toHTML($(this).val());
+      //$('div#criteria').innerHTML = "Hello World";
+      $('div#criteria').html(md);
+
+      //$('div#criteria').text(markdown.toHTML($(this).val()));
+
+      //markdown.toHTML(input.value);
+       /// do your thing here.
+       //  use $(this).val() instead e.target.value
+    });
+
+    //get form field input#id_story_points
+    $('input#id_story_points').on('change keydown keyup',function (){
+      console.log("PRESSED", $(this).val());
+      $('span#span-story-points').text($(this).val());
+       /// do your thing here.
+       //  use $(this).val() instead e.target.value
+    });
+
+    //get form field input#id_story_points
+    $('input#id_business_value').on('change keydown keyup',function (){
+      console.log("PRESSED", $(this).val());
+      $('span#span-business-value').text($(this).val());
+       /// do your thing here.
+       //  use $(this).val() instead e.target.value
+    });
+
+    //get form field input#why
+    $('textarea#id_notes').on('change keydown keyup',function (){
+      console.log("PRESSED", $(this).val());
+      //$('#criteria').text($(this).val());
+      console.log(markdown.toHTML($(this).val()));
+      var md = markdown.toHTML($(this).val());
+      //$('div#criteria').innerHTML = "Hello World";
+      $('div#notes').html(md);
+    });
+
+  });
+</script>
+{% endblock custom_js %}
+{% endblock %}
