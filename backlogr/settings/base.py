@@ -288,15 +288,15 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
             'formatter': 'verbose'
-        },
-        'file': {
-            'level': 'INFO',
-            'class':'logging.handlers.RotatingFileHandler',
-            'maxBytes': 1024*1024*5,
-            'backupCount': 2,
-            'filename': LOGGING_PATH + '/info.log',
-            'formatter': 'verbose'
-        },
+        }
+        #'file': {
+        #    'level': 'INFO',
+        #    'class':'logging.handlers.RotatingFileHandler',
+        #    'maxBytes': 1024*1024*5,
+        #    'backupCount': 2,
+        #    'filename': LOGGING_PATH + '/info.log',
+        #    'formatter': 'verbose'
+        #},
 
     },
     'loggers': {
@@ -315,7 +315,7 @@ LOGGING = {
             'propagate': False,
         },
         'backlogr': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'DEBUG',
         },
     }
