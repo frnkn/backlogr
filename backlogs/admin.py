@@ -4,5 +4,7 @@ from django.contrib import admin
 from models import Backlog
 
 class BacklogAdmin(admin.ModelAdmin):
-    fields = ['uuid']
+    list_display = ['uuid', 'short_id', 'user', 'name', 'created_on', 'updated_on']
+
+
 admin.site.register(Backlog, BacklogAdmin)
