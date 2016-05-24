@@ -28,12 +28,17 @@ class BacklogItem(models.Model):
     Todos:
     * Lets calculate the short id based on the short backlog name. Create the short backlog name identifier within the backlog
     """
+
+
     BACKLOG_ITEM_CHOICES = (
         ('user_story', 'user_story'),
         ('epic', 'epic'),
         ('non_functional_requirement', 'non_functional_requirement'),
     )
     uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
+
+    item_short_id = models.CharField(max_length=200, editable=False, default=0, unique=True)
+    sequence_increment = models.PositiveIntegerField(default=0)
 
     user = models.ForeignKey(User, db_index=True)
     backlog = models.ForeignKey(Backlog, db_index=True)
@@ -81,16 +86,28 @@ class BacklogItem(models.Model):
     def get_user_story(self):
         return "As a " + self.who + " I'd like to " + self.what + ", so that " + self.why + "."
 
-    def make_short_id(self):
-        return self.backlog.name.upper() + "-" + str(self.id)
+    def make_item_short_id(self):
+        """
+        Create a short id based on the backlog short id and the sequence_increment.
+        """
+        return self.backlog.short_id + "-" + str(self.sequence_increment)
 
     def save(self, *args, **kwargs):
         if not self.pk:
             #Get the highest UI Rank and assign the new item to the board
             #If no objects exist assign 0
             bi = BacklogItem.objects.filter(backlog=self.backlog)
-            print "CREATED"
-            print len(bi)
+            if len(bi) != 0:
+                try:
+                    highest_bi = BacklogItem.objects.select_for_update(nowait=True).order_by('-sequence_increment')[0]
+                    self.sequence_increment = highest_bi.sequence_increment + 1
+                except KeyError:
+                    self.sequence_increment = 0
+            else:
+                self.sequence_increment = 0
+
             self.list_ui_rank = len(bi)
-        self.short_id = self.make_short_id()
+            self.item_short_id = self.make_item_short_id()
+
+
         super(BacklogItem, self).save(*args, **kwargs)
