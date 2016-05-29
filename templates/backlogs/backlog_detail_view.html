@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+
+
 {% block title %}
 <title>FRNKN - Backlog</title>
 {% endblock title %}
@@ -19,6 +21,7 @@
 
 
 {% block content %}
+{% include "nav/nav.html" %}
 <div class="container-fluid ta-backlog-projects">
   <div class="row">
     <div class="col-xs-12">
@@ -66,7 +69,7 @@
       <div class="col-xs-12 backlog__item" data-backlog-item-id="{{ backlog_item.uuid }}">
         <div class="card">
           <div class="card-header">
-           <small class="muted">#{{backlog_item.list_ui_rank}} | {{ backlog_item.backlog_item_type }}
+           <small class="muted">#{{backlog_item.list_ui_rank}} | {{ backlog_item.backlog_item_type }} | short id: {{ backlog_item.item_short_id }}
 
            {{ backlog_item.backlog.short_id }}-{{ backlog_item.backlog.id }} | {{ backlog_item.uuid }} | {% if backlog_item.parent_uuid %}Broken down from: <a class="" href="{% url 'backlog_item_update_view' backlog_item_uuid=backlog_item.parent_uuid %}">{{ backlog_item.parent_uuid }}</a>{% endif %}</small>
          </div>

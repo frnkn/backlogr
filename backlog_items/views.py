@@ -105,6 +105,11 @@ class BacklogItemUpdateView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse('backlog_detail_view', kwargs={'uuid': self.obj_for_redirect.backlog.uuid})
 
+class BacklogItemAjaxCreateView(LoginRequiredMixin, CreateView):
+    model = BacklogItem
+    fields = ['backlog_item_type', 'who', 'what', 'why', 'acceptance_criteria', 'notes', 'story_points', 'business_value']
+    pass
+
 class BacklogItemCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
     As a pm I'd like to create a backog item via a form on a single page.

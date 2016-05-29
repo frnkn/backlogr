@@ -6,5 +6,5 @@ from django.contrib import admin
 from models import BacklogItem
 
 class BacklogItemAdmin(admin.ModelAdmin):
-    list_display = ('uuid', 'user', 'backlog', 'backlog_item_type', 'list_ui_rank', 'parent_uuid', 'created_on', 'updated_on')
+    list_display = ('uuid', 'user', 'backlog', 'backlog_item_type', 'sequence_increment', 'item_short_id', 'list_ui_rank', 'parent_uuid', 'created_on', 'updated_on')
 admin.site.register(BacklogItem, BacklogItemAdmin)

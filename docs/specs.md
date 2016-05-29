@@ -37,3 +37,13 @@
 
 ## Tagging a backlog item
 "As a pm I'd like to give a backlog item tags, so that I can categorize an item."
+
+
+## Styling Todos
+* Setup Startpage with blank colors
+* Setup a Navigation Bar
+* Fix Backlog Empty View
+* Fix Update View
+* Fix BreakDown View
+* Fix Meta Pages
+* DO RELEASE WITH DOCKER :-)
