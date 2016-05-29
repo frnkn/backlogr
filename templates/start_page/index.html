@@ -3,11 +3,11 @@
 {% load staticfiles %}
 
 {% block title %}
-<title>FRNKN - Your Todo List for Agile Software Projects</title>
+<title>FRNKN - Agile Backlog and User Story Management</title>
 {% endblock title %}
 
 {% block site_description %}
-<meta name="description" content="Easily manage project backlogs, user stories, epics and non functional requirements with FRNKN.">
+<meta name="description" content="FRNKN is your todo list for software projects: Easily manage project backlogs, user stories and non functional requirements.">
 {% endblock site_description %}
 
 {% block content %}
@@ -53,6 +53,45 @@
     margin-bottom: 2rem;
     width: 15%;
   }
+
+  .jumbo-card-1, .jumbo-card-2, .jumbo-card-3, .jumbo-card-4 {
+    max-width: 65%;
+    margin: 0 auto;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*animation-iteration-count: infinite;*/
+  }
+
+  /* iPhone [portrait + landscape] */
+  @media only screen and (max-device-width: 480px) {
+  	.jumbo-card-1, .jumbo-card-2, .jumbo-card-3, .jumbo-card-4 {
+      max-width: 100%;
+    }
+  }
+
+  .card-text {
+    min-height: 100px;
+  }
+
+  .jumbo-story-text-4 {
+    min-height: 65px !important;
+  }
+
+  #mc_embed_signup {
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+    margin-bottom: 20px;
+    font-family: 'Railway';
+  }
+
+  #mc_embed_signup input.email {
+    border-radius: 0px !important;
+    font-family: Raleway, sans-serif !important;
+    margin-bottom: 15px;
+  }
+
+
 </style>
 <!--
 <div class="full-width__jumbo">
@@ -73,7 +112,7 @@
         <div class="col-xs-6 text-right">
           <div class="brand__bar--right" style="float:right">
             <ul class="list-inline">
-              <li><a class="btn btn-info btn-sm">Login</a></li>
+              <!--<li><a class="btn btn-info btn-sm">Login</a></li>-->
             </ul>
           </div>
         </div>
@@ -85,32 +124,83 @@
   <div class="row">
     <div class="col-xs-12 text-xs-center">
       <br><br><br>
-      <h2 class="display-5" style="color: #fff; text-transform:uppercase; letter-spacing: 0.3rem;line-height:1.7;"><strong>Todo lists for agile software projects</strong><hr class="h-teaser-line">Easily Manage Backlogs and User Stories</h2>
+      <h2 class="display-5" style="color: #fff; text-transform:uppercase; letter-spacing: 0.3rem;line-height:1.7;"><strong>Todo lists for agile software projects</strong><hr class="h-teaser-line">Easily Manage Backlogs & User Stories</h2>
         <br><br>
         <div class="center-block text-xs-center">
-          <!-- Begin MailChimp Signup Form -->
-          <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-          <style type="text/css">
-            #mc_embed_signup{ clear:left; font:18px Helvetica,Arial,sans-serif; width:100%;}
-            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-            #mc_embed_signup_scroll input.email{height: 52px;}
-          </style>
-          <div id="mc_embed_signup">
-          <form action="//carlbednorz.us7.list-manage.com/subscribe/post?u=8ab99e8031adf9331fc31b75f&amp;id=e6f223143a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll">
+          <div class="card jumbo-card-1">
+            <div class="card-header">
+              <small class="muted">#1 | User Story | short id: FRNKN-1</small>
+            </div>
+            <div class="card-block">
+              <p class="card-text jumbo-story-text-1 lead" style="text-align:left;"></p>
+              <ul class="list-inline" style="text-align:left">
+                <li class="list-inline-item">Story Points: 5</li>
+                <li class="list-inline-item">Business Value: 130</li>
 
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your E-Mail Adress" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8ab99e8031adf9331fc31b75f_e6f223143a" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Apply Now For Early Access" name="subscribe" id="mc-embedded-subscribe" class="btn btn-danger btn-lg"></div>
-              </div>
-          </form>
+              </ul>
+            </div>
           </div>
-          <br><br>
 
-          <!--End mc_embed_signup-->
+          <div class="card jumbo-card-2 hidden-xs-up">
+            <div class="card-header">
+              <small class="muted">#2 | User Story | short id: FRNKN-2</small>
+            </div>
+            <div class="card-block">
+              <p class="card-text jumbo-story-text-2 lead" style="text-align:left;"></p>
+              <ul class="list-inline" style="text-align:left">
+                <li class="list-inline-item">Story Points: 2</li>
+                <li class="list-inline-item">Business Value: 90</li>
 
+              </ul>
+            </div>
+          </div>
+
+          <div class="card jumbo-card-3 hidden-xs-up">
+            <div class="card-header">
+              <small class="muted">#3 | User Story | short id: FRNKN-3</small>
+            </div>
+            <div class="card-block">
+              <p class="card-text jumbo-story-text-3 lead" style="text-align:left;"></p>
+              <ul class="list-inline" style="text-align:left">
+                <li class="list-inline-item">Story Points: 8</li>
+                <li class="list-inline-item">Business Value: 270</li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="card jumbo-card-4 hidden-xs-up">
+            <div class="card-header">
+              <small class="muted">#4 | User Story | short id: FRNKN-4</small>
+            </div>
+            <div class="card-block">
+              <p class="card-text jumbo-story-text-4 lead" style="text-align:left;"></p>
+              <!-- Begin MailChimp Signup Form -->
+              <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+              <style type="text/css">
+                #mc_embed_signup{ clear:left; font:18px Helvetica,Arial,sans-serif; width:100%;}
+                /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                #mc_embed_signup_scroll input.email{height: 52px;}
+              </style>
+              <div id="mc_embed_signup" class="hidden-xs-up">
+              <form action="//carlbednorz.us7.list-manage.com/subscribe/post?u=8ab99e8031adf9331fc31b75f&amp;id=e6f223143a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll">
+
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your E-Mail Adress" required>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8ab99e8031adf9331fc31b75f_e6f223143a" tabindex="-1" value=""></div>
+                  <div class="clear"><input type="submit" value="Apply Now" name="subscribe" id="mc-embedded-subscribe" class="btn btn-danger btn-lg"></div>
+                  </div>
+              </form>
+              </div>
+              <!--End mc_embed_signup-->
+              <ul class="list-inline" style="text-align:left">
+                <li class="list-inline-item">Story Points: Infinite</li>
+                <li class="list-inline-item">Business Value: 270</li>
+              </ul>
+            </div>
+          </div>
         </div>
     </div>
   </div>
@@ -126,25 +216,18 @@
       <p class="lead" style="max-width: 60%; margin: 0 auto;">FRNKN lets you manage epics, user stories, acceptance criteria and software requirements. Our feature rich project backlogs support your agile development and project management workflow.
       We are currently under heavy development. Subscribe now and get notified when we'll have launched our beta programm.
         Subscribers will get a special early bird offer and an exclusive beta account!</p>
+  <br>
+      <a href="#email-sub" class="btn btn-danger btn-lg">Sign Up Now</a>
       </div>
-        <dl class="dl-horizontal">
-          <dt class="col-sm-3">Description lists</dt>
-          <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-
-          <dt class="col-sm-3">Euismod</dt>
-          <dd class="col-sm-9">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-          <dd class="col-sm-9 col-sm-offset-3">Donec id elit non mi porta gravida at eget metus.</dd>
-
-          <dt class="col-sm-3">Malesuada porta</dt>
-          <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
-
-          <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-          <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-        </dl>
       </div>
     </div>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
+      <div style="text-align:center">
+        <br><br>
+        <h3 style="text-transform: uppercase">FRNKN - Features</h3>
+        <hr class="hr-content">
+      </div>
       <div class="card-deck-wrapper">
         <div class="card-deck">
           <div class="card">
@@ -172,14 +255,39 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <br><br>
+      <div style="text-align:center">
+        <h3 style="text-transform: uppercase">FRNKN - Frequently Asked Questions</h3>
+        <hr class="hr-content">
+      </div>
+
+      <dl class="dl-horizontal">
+        <dt class="col-sm-3"><h4>What is FRNKN?</h4></dt>
+        <dd class="col-sm-9 lead">FRNKN is a new, sophisticated app that allows product owners, managers and software development teams to easily create, organize, manage and discuss
+          agile software specifications.</dd>
+
+        <dt class="col-sm-3"><h4>How does FRNKN work?</h4></dt>
+        <dd class="col-sm-9 lead">FRNKN allows you to create backlogs that hold backlog items, such as user stories, epics or non functional requirements. You can create, update, archive or breakdown user stories, attach wireframes or documents, write acceptance criterias and notes (with markdown). You can even prioritize backlog items, add story points and business values and print your backlog onto cards.</dd>
+
+        <dt class="col-sm-3"><h4>Who is FRNKN?</h4></dt>
+        <dd class="col-sm-9 lead">Behind FRNKN stands a small team of experienced product managers & product owners and software engineers with +8 years of experience in e-commerce, digital advertising and big relaunch projects. FRNKN also provides professional web consultancy and development services for your company. <a class="" href="#">Check it out.</a></dd>
+
+        <dt class="col-sm-3"><h4>When is FRNKN available?</h4></dt>
+        <dd class="col-sm-9 lead">We're working hard on the project. Besides having a full time job and a family we will launch the public version of FRNKN around Summer/Autumn 2016. Invitations for beta/early bird accounts will be send as soon as possible.</dd>
+
+      </dl>
+    </div>
+  </div>
 </div>
 
-<div class="container-fluid jumbotron-bottom ta-start-page-jumbo">
+<div class="container-fluid jumbotron ta-start-page-jumbo" style="color: #fff; ">
   <div class="row">
     <div id="email-sub" class="col-xs-12 text-xs-center">
 
-      <h2 class="display-3"><strong>FRNKN</strong> will be available around summer 2016</h2>
-      <p class="lead">Subscribe now and get notified when we'll have launched our beta.
+      <h2 class="display-3" style="text-transform: uppercase; width: 75%; margin: 0 auto;"><strong>FRNKN</strong> will be available around summer 2016</h2>
+      <p class="lead" style="width: 75%; margin: 0 auto; padding-bottom: 15px;">Subscribe now and get notified when we'll have launched our beta.
         Subscribers will get an exclusive beta account with a special early brid offer!</p>
         <div class="center-block text-xs-center">
           <!-- Begin MailChimp Signup Form -->
@@ -191,20 +299,101 @@
             #mc_embed_signup_scroll input.email{height: 52px;}
           </style>
           <div id="mc_embed_signup">
-          <form action="//carlbednorz.us7.list-manage.com/subscribe/post?u=8ab99e8031adf9331fc31b75f&amp;id=e6f223143a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll">
+            <form action="//carlbednorz.us7.list-manage.com/subscribe/post?u=8ab99e8031adf9331fc31b75f&amp;id=e6f223143a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
 
-          	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your E-Mail Adress" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8ab99e8031adf9331fc31b75f_e6f223143a" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-danger btn-lg"></div>
-              </div>
-          </form>
+            	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your E-Mail Adress" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8ab99e8031adf9331fc31b75f_e6f223143a" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-danger btn-lg"></div>
+                </div>
+            </form>
           </div>
 
           <!--End mc_embed_signup-->
         </div>
     </div>
+    <div class="col-xs-12 text-xs-center">
+      <h4>Tweet it! Recommend FRNKN to your friends.</h4>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Checkout FRNKN - Manage Backlogs and User Stories @frnkn_com" data-via="frnkn_com" data-size="large" data-related="frnkn_com" data-hashtags="frnkn">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+      </ul>
+    </div>
   </div>
 </div>
 {% endblock %}
+
+{% block custom_js %}
+<script src="{% static 'js/typed.js' %}"></script>
+
+<script>
+$(function(){
+      //Write 1st User Story
+      $(".jumbo-story-text-1").typed({
+        strings: ["As a Product Owner, I'd like to use FRNKN so that I can write awesome user stories for my dev team."],
+        typeSpeed: 0,
+        showCursor: false,
+        callback: function() {
+          $(".jumbo-card-1").addClass('animated bounceOutDown').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+             function(){
+               $(".jumbo-card-1").addClass('hidden-xs-up');
+               $(".jumbo-card-2").removeClass('hidden-xs-up');
+               $(".jumbo-story-text-2").typed({
+                 strings: ["As a Product Manager, I'd like to manage acceptance criteria, non functional requirements and wireframes with FRNKN, so that I create the best software specs ever."],
+                 typeSpeed: 0,
+                 showCursor: false,
+                 callback: function(){
+                   $(".jumbo-card-2").addClass('animated bounceOutDown').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                      function(){
+                        $(".jumbo-card-2").addClass('hidden-xs-up');
+                        $(".jumbo-card-3").removeClass('hidden-xs-up');
+                        $(".jumbo-story-text-3").typed({
+                          strings: ["As a Product Manager, I'd like to print my stories with FRNKNs awesome print functionalities, so that I can put my stories on my physical whiteboard."],
+                          typeSpeed: 0,
+                          showCursor: false,
+                          callback: function(){
+                            $(".jumbo-card-3").addClass('animated bounceOutDown').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                               function(){
+                                 $(".jumbo-card-3").addClass('hidden-xs-up');
+                                 $(".jumbo-card-4").removeClass('hidden-xs-up');
+                                 $(".jumbo-story-text-4").typed({
+                                   strings: ["As a new FRNKN customer, I'd like to sign up for my early bird backlog asap, so that I experience the awesomeness of FRNKN!"],
+                                   typeSpeed: 0,
+                                   showCursor: false,
+                                   callback: function(){
+                                     $("#mc_embed_signup").removeClass('hidden-xs-up');
+                                     $("#mc_embed_signup").addClass('animated zoomIn');
+                                   }
+                                 }
+                              );
+                            }
+                          );
+                        }
+                      });
+                     }
+                   );
+                 }
+               });
+             }
+           );
+        },
+      });
+
+      //Do animation
+      //$(".jumbo-card-1").addClass('animated bounceOutDown');
+      //When typewriter has been done, than add class with animated
+      //When animation is done than do the next thing and start at the beginning
+
+      //$(".jumbo-card-2").removeClass('hidden-xs-up');
+
+      $(".jumbo-story-text-1").typed({
+        strings: ["As a Product Owner, I'd like write Acceptance Criterias for my backlog item, so that my dev team can..."],
+        typeSpeed: 0
+      });
+
+      //$(".jumbo-card-2").addClass('animated bounceOutDown');
+  });
+</script>
+
+{% endblock custom_js %}

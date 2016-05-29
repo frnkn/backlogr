@@ -33,10 +33,10 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 $brand-primary:             #4E51A4 !default;
-$brand-success:             #5cb85c !default;
+$brand-success:             #47B41D !default;
 $brand-info:                #FDFDFD !default;
-$brand-warning:             #f0ad4e !default;
-$brand-danger:              #F18BA8 !default;
+$brand-warning:             #E7C63C !default;
+$brand-danger:              #E73C6D !default;
 
 
 // Options
@@ -142,8 +142,8 @@ $grid-gutter-width:          1.875rem !default; // 30px
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:     "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          "Cabin", Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
@@ -251,7 +251,7 @@ $btn-secondary-color:            $gray-dark !default;
 $btn-secondary-bg:               #fff !default;
 $btn-secondary-border:           #ccc !default;
 
-$btn-info-color:                 #333 !default;
+$btn-info-color:                 #353563 !default;
 $btn-info-bg:                    $brand-info !default;
 $btn-info-border:                $btn-info-bg !default;
 
