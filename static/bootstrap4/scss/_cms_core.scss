@@ -1,0 +1,125 @@
+/*Core SCSS File for Marketing related modules*/
+
+.teaser {
+  &__jumbo {
+    border-bottom: 1px solid #eee;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    background: rgba(67,68,154,1);
+    background: -moz-linear-gradient(45deg, rgba(67,68,154,1) 0%, rgba(67,68,154,1) 55%, rgba(105,109,198,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(67,68,154,1)), color-stop(55%, rgba(67,68,154,1)), color-stop(100%, rgba(105,109,198,1)));
+    background: -webkit-linear-gradient(45deg, rgba(67,68,154,1) 0%, rgba(67,68,154,1) 55%, rgba(105,109,198,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(67,68,154,1) 0%, rgba(67,68,154,1) 55%, rgba(105,109,198,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(67,68,154,1) 0%, rgba(67,68,154,1) 55%, rgba(105,109,198,1) 100%);
+    background: linear-gradient(45deg, rgba(67,68,154,1) 0%, rgba(67,68,154,1) 55%, rgba(105,109,198,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43449a', endColorstr='#696dc6', GradientType=1 );
+
+    h2 {
+      color: #fff;
+      text-transform:uppercase;
+      letter-spacing: 0.3rem;
+      line-height:1.7;
+    }
+
+    p {
+      width: 75%;
+      margin: 0 auto; 
+      padding-bottom: 15px;
+    }
+
+    &--bottom {
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+      background-color: #fff;
+      border-radius: .3rem;
+    }
+  }
+}
+
+/*
+Specifzing the jumbo cards within the jumbotron start page
+*/
+.jumbo-card-1, .jumbo-card-2, .jumbo-card-3, .jumbo-card-4 {
+  max-width: 65%;
+  margin: 0 auto;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: left;
+}
+
+/* iPhone [portrait + landscape] */
+@media only screen and (max-device-width: 480px) {
+  .jumbo-card-1, .jumbo-card-2, .jumbo-card-3, .jumbo-card-4 {
+    max-width: 100%;
+  }
+}
+
+
+
+.card-text {
+  min-height: 100px;
+
+}
+
+#mc_embed_signup {
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  margin-bottom: 20px;
+  font-family: 'Railway';
+}
+
+#mc_embed_signup input.email {
+  border-radius: 0px !important;
+  font-family: Raleway, sans-serif !important;
+  margin-bottom: 15px;
+}
+
+
+.cm {
+  &__box {
+    h2 {
+      text-transform: uppercase;
+    }
+
+    p {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+    &--text {
+
+    }
+  }
+}
+
+hr.hr-content {
+  border: 2px solid #e73c6d;
+  margin-top: 0px;
+  margin-bottom: 2rem;
+  width: 15%;
+}
+
+.h-teaser-line {
+  border: 3px solid #e73c6d;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 20%;
+}
+
+.dl {
+  &__faq {
+    max-width: 75%;
+    margin: 0 auto;
+    h4 {
+      border-bottom: 2px solid $brand-danger;
+      padding-bottom: 3px;
+    }
+
+    dd {
+      margin-bottom: 25px;
+    }
+  }
+}

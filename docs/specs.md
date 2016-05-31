@@ -40,10 +40,22 @@
 
 
 ## Styling Todos
-* Setup Startpage with blank colors
-* Setup a Navigation Bar
+* Setup Startpage with blank colors done
+* Setup a Navigation Bar done
 * Fix Backlog Empty View
 * Fix Update View
 * Fix BreakDown View
 * Fix Meta Pages
 * DO RELEASE WITH DOCKER :-)
+* Put all inline styles into scss files
+* implement grunt worflow
+* Put JS inline stuff into file DONE
+* Fix image size within card done
+* Write content for cards
+* Fix mobile layout
+* Better footer - larger with social stuff etc.
+* No underline in brand on hover
+* gradient in jumbo
+
+## grunt
+* Put output file into static after save and do static import
