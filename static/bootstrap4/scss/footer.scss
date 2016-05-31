@@ -1,0 +1,14 @@
+/*Extended footer styles*/
+.social-icons {
+  display: inline;
+  float: right;
+
+  a {
+    opacity: 0.2;
+    margin-right: 5px;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+}

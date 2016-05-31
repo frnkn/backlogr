@@ -24,9 +24,9 @@
       line-height:1.7;
     }
 
-    p {
+    &--text {
       width: 75%;
-      margin: 0 auto; 
+      margin: 0 auto;
       padding-bottom: 15px;
     }
 
@@ -55,6 +55,11 @@ Specifzing the jumbo cards within the jumbotron start page
 @media only screen and (max-device-width: 480px) {
   .jumbo-card-1, .jumbo-card-2, .jumbo-card-3, .jumbo-card-4 {
     max-width: 100%;
+  }
+
+  .cm__box--text p {
+    max-width: 100% !important;
+
   }
 }
 
