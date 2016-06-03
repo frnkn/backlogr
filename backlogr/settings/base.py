@@ -1,6 +1,7 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
-
+import json
+from django.core.exceptions import ImproperlyConfigured
 
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
@@ -17,15 +18,13 @@ SITE_NAME = basename(DJANGO_ROOT)
 path.append(DJANGO_ROOT)
 ########## END PATH CONFIGURATION
 
-
-########## DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = False
 
 ########## MANAGER CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ('Your Name', 'your_email@example.com'),
+    ('Carl Bednorz', 'carl@frnkn.com'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -33,16 +32,27 @@ MANAGERS = ADMINS
 ########## END MANAGER CONFIGURATION
 
 
+########## CONF DETAILS
+with open(DJANGO_ROOT + "/conf/secrets/secrets.json") as f:
+    secrets = json.loads(f.read())
+
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = "Set the {0} env variable".format(setting)
+        raise ImproperlyConfigured(error_msg)
+
 ########## DATABASE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': get_secret("DATABASE_NAME"),
+        'USER': get_secret("DATABASE_USER"),
+        'PASSWORD': get_secret("DATABASE_PASSWORD"),
+        'HOST': get_secret("DATABASE_HOST"),
+        'PORT': get_secret("DATABASE_PORT"),
     }
 }
 ########## END DATABASE CONFIGURATION
@@ -105,14 +115,14 @@ STATICFILES_FINDERS = (
 ########## SECRET CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key should only be used for development and testing.
-SECRET_KEY = "ABCDEF"
+SECRET_KEY = get_secret("SECRET_KEY")
 ########## END SECRET CONFIGURATION
 
 
 ########## SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [get_secret("ALLOWED_HOSTS")]
 ########## END SITE CONFIGURATION
 
 
@@ -125,10 +135,6 @@ FIXTURE_DIRS = (
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 ########## TEMPLATE CONFIGURATION
-
-
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
