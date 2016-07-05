@@ -52,3 +52,19 @@ function start_page_jumbo_animation () {
     },
   });
 }
+
+/**
+* Defining the main app
+**/
+function App(){};
+
+
+App.prototype = {
+  constructor: App,
+  sayHello:function(){
+    console.log("HELLO FRNKN APP");
+  },
+  dosth:function(){
+    console.log("Do Sth");
+  }
+}

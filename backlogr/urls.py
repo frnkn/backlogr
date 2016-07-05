@@ -35,6 +35,11 @@ urlpatterns = [
         TemplateView.as_view(template_name="start_page/index.html"),
         name="start_page"),
 
+    #Start Page
+    url(r'^product-management-web-development-services/$',
+        TemplateView.as_view(template_name="services/services.html"),
+        name="services"),
+
     #######Meta Views
     #Imprint
     url(r'^imprint/$',

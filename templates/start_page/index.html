@@ -276,10 +276,11 @@
       <a href="https://twitter.com/share" class="twitter-share-button" data-text="Checkout FRNKN - Manage Backlogs and User Stories @frnkn_com" data-via="frnkn_com" data-size="large" data-related="frnkn_com" data-hashtags="frnkn">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-      </ul>
+
     </div>
   </div>
 </div>
+
 {% endblock %}
 
 {% block custom_js %}
@@ -288,6 +289,11 @@
 <script>
   $(function(){
     start_page_jumbo_animation();
+  });
+
+  $(function(){
+    var the_app = new App();
+    the_app.sayHello();
   });
 </script>
 
